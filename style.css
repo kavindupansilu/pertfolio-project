@@ -1,0 +1,481 @@
+/* Basic Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+}
+
+header {
+    background-color: #222;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.PT{
+    text-align: center;
+}
+
+
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px 50px;
+    background: #1b1b1b;
+    
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+ 
+
+
+
+.social-links {
+    display: flex;
+    margin-top: 20px;
+    justify-content:left;
+    margin-left: 120px;
+}
+
+.fa-square-github{
+ font-size: 60px;
+ margin-left: 15px;
+ margin-right: 15px;
+}
+
+.fa-square-github:hover{
+    cursor:pointer;
+}
+
+.social-links li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+/* About, Services, Portfolio, Contact Sections */
+section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section p, section div {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.service h3 {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* image css */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 0;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0; /* Start invisible */
+}
+
+.hero-image img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial state: hidden with 0 opacity */
+.fade-in-element {
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* Transition effect for 2 seconds */
+}
+
+/* Visible state: full opacity */
+.fade-in-element.visible {
+    opacity: 1;
+}
+
+.blue{
+    color:#007bff;
+}
+
+/*typing css*/
+#h1 {
+    border-right: 2px solid;
+    display: inline;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.blinking-cursor {
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+
+nav {
+    background-color: #222;
+    padding: 15px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative;
+}
+
+/* Hamburger Menu Styles */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    position: relative; /* Needed for the positioning of ::after */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* On hover, change the text color and expand the underline */
+.nav-menu a:hover {
+    color: #007bff; /* Optional: change text color on hover */
+}
+
+.nav-menu a:hover::after {
+    width: 100%; /* Full width underline on hover */
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #007bff; /* Blue color for the underline */
+    transition: width 0.3s ease-in-out; /* Smooth width transition */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show the hamburger on smaller screens */
+    }
+
+    .nav-menu {
+        display: none; /* Hide the navigation menu by default on smaller screens */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #222;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide the full menu */
+        flex-direction: column;
+        background-color: #222;
+        position: absolute;
+        top: 60px; /* Below the header */
+        right: 0;
+        width: 100%;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger on small screens */
+    }
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 145px;
+  }
+  
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* responsive */
+
+  /* Basic styling for mobile-first */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 10px;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Social Links */
+.social-links {
+    padding: 10px;
+}
+
+.social-links li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* Basic responsive styles */
+@media (min-width: 768px) {
+    /* For tablet and larger devices */
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-content {
+        text-align: left;
+        margin-right: 20px;
+    }
+
+    .hero-image img {
+        max-width: 400px;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .social-links li {
+        margin: 0 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* For desktop and larger devices */
+    .hero {
+        padding: 100px;
+    }
+
+    .hero-content {
+        max-width: 50%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .social-links li {
+        margin: 0 20px;
+    }
+
+    .download-btn {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
